@@ -4,7 +4,7 @@ If you find this script useful, you can support development:
 
 ## 💰 Support
 
-[![Donate using Liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/p4ri4h/donate)
+[![Donate using Liberapay](/.assets/liberapay_button.png)](https://liberapay.com/p4ri4h/donate)
 
 **Cash App:** $p4ri4h  
 ![Cash App QR](/.assets/cashapp-qr.png)
