@@ -4,7 +4,7 @@ If you find this script useful, you can support development:
 
 ## 💰 Support
 
-**Cash App:** $YourCashtag  
+**Cash App:** $p4ri4h  
 ![Cash App QR](cashapp-qr.png)
 
 **Bitcoin**
