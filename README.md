@@ -4,6 +4,9 @@ If you find this script useful, you can support development:
 
 ## 💰 Support
 
+<script src="https://liberapay.com/p4ri4h/widgets/button.js"></script>
+<noscript><a href="https://liberapay.com/p4ri4h/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
+
 **Cash App:** $p4ri4h  
 ![Cash App QR](/.assets/cashapp-qr.png)
 
