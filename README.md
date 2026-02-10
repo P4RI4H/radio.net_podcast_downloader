@@ -5,10 +5,10 @@ If you find this script useful, you can support development:
 ## 💰 Support
 
 **Cash App:** $p4ri4h  
-![Cash App QR](cashapp-qr.png)
+![Cash App QR](/.assets/cashapp-qr.png)
 
 **Bitcoin**   
-![Bitcoin QR](bitcoin-qr.png)
+![Bitcoin QR](/.assets/bitcoin-qr.png)
 
 `bc1q63q3thx2vmf9cyxqld5td6896z3k939pct4f0r`
 
