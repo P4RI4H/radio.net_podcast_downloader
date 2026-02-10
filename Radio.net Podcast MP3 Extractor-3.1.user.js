@@ -8,7 +8,6 @@
 // @version      3.1
 // @description  Extract and download podcast episodes from any radio.net podcast page
 // @author       P4RI4H
-// @match        https://www.radio.net/p/*
 // @match        https://www.radio.net/podcast/*
 // @grant        GM_download
 // @grant        GM_setValue
