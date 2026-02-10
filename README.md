@@ -50,7 +50,7 @@ This Tampermonkey user script extracts direct MP3 links from radio.net podcast p
 
 ## ▶ How to Use
 
-1. Visit any podcast page on: https://www.radio.net/p/ or https://www.radio.net/podcast/
+1. Visit any podcast page on: https://www.radio.net/podcast/
 
 2. The **Podcast Extractor panel** will appear in the top-right corner.
 
