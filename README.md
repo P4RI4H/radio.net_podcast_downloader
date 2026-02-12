@@ -83,6 +83,12 @@ https://support.jdownloader.org/en/knowledgebase/article/folder-watch-basic-usag
 
 ---
 
+## Issues:
+
+I am aware there are a couple issues with this, mainly that the window will close on some pages. In my testing, I have only found two, but please report any issues and I will look into them as soon as I am able!
+
+---
+
 ## ⚖ License
 
 Copyright (c) 2026 P4RI4H  
