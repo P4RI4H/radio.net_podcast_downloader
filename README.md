@@ -72,8 +72,10 @@ This Tampermonkey user script extracts direct MP3 links from radio.net podcast p
 
 1. Extract episodes.
 2. Click **Export for JDownloader**.
-3. Move the downloaded `.crawljob` file into your JDownloader watch folder.
+3. Move the downloaded `.crawljob` file into your JDownloader watch folder. 
 4. JDownloader will automatically queue the downloads.
+
+(Personally, I just add a shortcut to this directory in the directory I download my crawljob files and then drag them to the shortcut.)
 
 See JDownloader Folder Watch documentation:
 https://support.jdownloader.org/en/knowledgebase/article/folder-watch-basic-usage
