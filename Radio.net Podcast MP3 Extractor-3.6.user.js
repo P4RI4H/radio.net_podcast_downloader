@@ -551,6 +551,8 @@
 
         const content = blocks.join('\n\n');
         const fileName = `${podcastName}.crawljob`;
+        triggerBlobDownload(content, fileName);
+        updateStatus(`Exported ${episodes.length} episode(s) as ${fileName}`);
     }
 
     function triggerBlobDownload(content, fileName) {
