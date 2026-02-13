@@ -536,7 +536,6 @@
         if (episodes.length === 0) { updateStatus('No episodes to export.'); return; }
 
         const podcastName = getPodcastName().replace(/[<>:"/\\|?*]/g, '').trim();
-        const watchFolder = GM_getValue('watchFolder', '').trim();
 
         const blocks = episodes.map(ep => {
             const safeTitle = ep.title.replace(/[<>:"/\\|?*]/g, '').trim();
