@@ -65,7 +65,7 @@
 
             <div style="font-size:10px; font-weight:bold; color:#888; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:5px;">Direct Download</div>
 
-            <button id="download-all-btn" style="width:100%; padding:8px; margin-bottom:10px; background:#f44336; color:white; border:none; border-radius:4px; cursor:pointer; font-weight:bold;" disabled>Direct Download All</button>
+            <button id="download-all-btn" style="width:100%; padding:8px; margin-bottom:10px; background:#f44336; color:white; border:none; border-radius:4px; cursor:pointer; font-weight:bold;" disabled>Direct Download Queued</button>
 
             <button id="settings-btn" style="width:100%; padding:8px; background:#9E9E9E; color:white; border:none; border-radius:4px; cursor:pointer; font-weight:bold;">&#9881; Settings</button>
 
