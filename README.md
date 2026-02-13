@@ -8,10 +8,10 @@ If you find this script useful, consider buying me a coffee!
 [![Donate using Cashapp](/.assets/cashapp_button.png)](https://cash.app/$p4ri4h)[![Donate using Liberapay](/.assets/liberapay_button.png)](https://liberapay.com/p4ri4h/donate)
 
 **Cash App:** $p4ri4h  
-![Cash App QR](/.assets/cashapp-qr.png)
+<img src="/.assets/cashapp-qr.png" alt="Cashapp QR" width="200">
 
 **Bitcoin:** `bc1q63q3thx2vmf9cyxqld5td6896z3k939pct4f0r`   
-![Bitcoin QR](/.assets/bitcoin-qr.png)
+<img src="/.assets/bitcoin-qr.png" alt="Bitcoin QR" width="200">
 
 
 ---
