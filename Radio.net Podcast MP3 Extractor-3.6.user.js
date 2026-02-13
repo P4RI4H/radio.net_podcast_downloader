@@ -112,20 +112,30 @@
         console.log('✅ Event listeners attached');
     }
 
+    let panelRemovalAllowed = false; // Flag to control if panel should stay removed
+    let reinjectionObserver = null;
+
     function injectPanel() {
         if (document.body && !document.body.contains(panel)) {
+            panelRemovalAllowed = false; // Reset flag when injecting
             document.body.appendChild(panel);
             attachEventListeners();
             console.log('✅ Panel injected');
 
-            const observer = new MutationObserver(() => {
-                if (!document.body.contains(panel)) {
-                    console.log('⚠️ Panel was removed, re-injecting...');
+            // Stop any existing observer first
+            if (reinjectionObserver) {
+                reinjectionObserver.disconnect();
+            }
+
+            // Only re-inject if removal was NOT intentional
+            reinjectionObserver = new MutationObserver(() => {
+                if (!document.body.contains(panel) && !panelRemovalAllowed) {
+                    console.log('⚠️ Panel was removed unexpectedly, re-injecting...');
                     document.body.appendChild(panel);
                     attachEventListeners();
                 }
             });
-            observer.observe(document.body, { childList: true, subtree: true });
+            reinjectionObserver.observe(document.body, { childList: true, subtree: true });
         } else {
             setTimeout(injectPanel, 100);
         }
@@ -133,25 +143,50 @@
 
     setTimeout(injectPanel, 2000);
 
-    // Monitor URL changes
+    // ─────────────────────────────────────────────
+    //  URL MONITORING & NAVIGATION HANDLING
+    // ─────────────────────────────────────────────
+
+    // Extract podcast identifier from URL (everything after /podcast/ except page number)
+    function getPodcastIdentifier(url) {
+        const match = url.match(/\/podcast\/([^?]+)/);
+        if (!match) return null;
+        // Remove page parameter to get base podcast URL
+        return match[1].split('?')[0];
+    }
+
     let lastUrl = location.href;
-    new MutationObserver(() => {
+    let lastPodcastId = getPodcastIdentifier(location.href);
+
+    // Monitor URL changes using both MutationObserver and popstate
+    function handleUrlChange() {
         const url = location.href;
         if (url !== lastUrl) {
+            const currentPodcastId = getPodcastIdentifier(url);
+
+            console.log('🔍 URL changed:', url);
+            console.log('   Last podcast:', lastPodcastId);
+            console.log('   Current podcast:', currentPodcastId);
+
             lastUrl = url;
 
+            // Check if we're still on a podcast page
             if (!url.includes('/podcast/')) {
-                // Left podcast section entirely
+                // Left podcast section entirely - remove panel
                 if (document.body.contains(panel)) {
+                    panelRemovalAllowed = true; // Allow removal
                     document.body.removeChild(panel);
                     console.log('🗑️ Panel removed - not on podcast page');
                 }
-            } else {
-                // Still on podcast section, but URL changed (different podcast)
-                console.log('🔄 Podcast changed - resetting panel...');
+                lastPodcastId = null;
+            }
+            else if (currentPodcastId !== lastPodcastId) {
+                // Different podcast (not just pagination) - reset and reinject
+                console.log('🔄 Different podcast detected - resetting panel...');
 
                 // Remove old panel
                 if (document.body.contains(panel)) {
+                    panelRemovalAllowed = true; // Allow removal
                     document.body.removeChild(panel);
                 }
 
@@ -160,12 +195,31 @@
                 isDownloading = false;
                 isExtracting = false;
                 currentDownloadIndex = 0;
+                minimized = false;
+
+                // Update tracking
+                lastPodcastId = currentPodcastId;
 
                 // Reinject fresh panel after new page loads
                 setTimeout(injectPanel, 2000);
             }
+            // else: Same podcast, just different page number - keep panel open
         }
-    }).observe(document, { subtree: true, childList: true });
+    }
+
+    // Listen for both popstate (back/forward buttons) and DOM changes (SPA navigation)
+    window.addEventListener('popstate', handleUrlChange);
+
+    new MutationObserver(handleUrlChange).observe(document, { subtree: true, childList: true });
+
+    // Also monitor for link clicks that might trigger navigation
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (link && link.href) {
+            // Give the navigation a moment to happen, then check
+            setTimeout(handleUrlChange, 100);
+        }
+    }, true);
 
     // ─────────────────────────────────────────────
     //  SCRAPING HELPERS
