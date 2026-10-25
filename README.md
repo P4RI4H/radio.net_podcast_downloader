@@ -5,8 +5,7 @@ If you find this script useful, consider buying me a coffee!
 
 ## 💰 Support
 
-[![Donate using Cashapp](/.assets/cashapp_button.png)](https://cash.app/$p4ri4h)[![Donate using Liberapay](/.assets/liberapay_button.png)](https://liberapay.com/p4ri4h/donate)
-
+[![Donate using Cashapp](/.assets/cashapp_button.png)](https://cash.app/$p4ri4h)
 **Cash App:** $p4ri4h  
 <img src="/.assets/cashapp-qr.png" alt="Cashapp QR" width="200">
 
